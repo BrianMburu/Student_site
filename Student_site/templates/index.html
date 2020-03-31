@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+  <div class="container-fluid">
+    <div  class="jumbotron">
+      <h1>Hi there Welcome EDU APP!!</h1>
+      {% if user.is_authenticated%}
+        <h2>Hi {{ user.username }}. Continue to advance your career with EDU APP.</h2>
+      {% else %}
+        <h2>You are not logged in!</h2>
+        <h3>Please Register or Login from the menu to view full content thanks.</h3>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

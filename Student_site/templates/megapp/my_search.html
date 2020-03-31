@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body_block %}
+    <h1>{{ search | title }}</h1>
+    {% if user.is_authenticated %}
+    <div class="row">
+        {% for post in final_posting %}
+        <div class = "col s4" >
+            <div class="card" style="max-width:20.5em;height:400px;overflow: hidden;">
+                <div style=" height:250px;overflow: hidden;" class="card-image">
+                    <a href="{{ post.1 }}"><img class="card-img-top" src="{{ post.3 }}" alt="Card image"></a>
+                </div>
+                <div class="card-content text-center">
+                    <h4 class="card-title">{{ search }}</h4>
+                    <p class="card-text">{{ post.0 }}</p>
+                </div>
+                <div style="padding: 5px 5px 5px 5px;"  class="card-action text-center">
+                    <a href="{{ post.1 }}" class="btn btn-primary left">View listing: price {{ post.2 }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="jumbotron">
+        <h2>You are not logged in!</h2>
+        <h3>Please Register or Login from the menu to view full content thanks.</h3>
+    </div>
+    {% endif %}
+{% endblock %}
