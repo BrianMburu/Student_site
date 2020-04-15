@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% block body_block %}
-
   <div class="container-fluid">
     <div  class="jumbotron">
       <h1>Hi there Welcome EDU APP!!</h1>
       {% if user.is_authenticated%}
         <h2>Hi {{ user.username }}. Continue to advance your career with EDU APP.</h2>
+        <p>You can send your opinions on the email in the contacts section in the side menu bar. They will gladly be accepted and looked into.</p>
       {% else %}
         <h2>You are not logged in!</h2>
-        <h3>Please Register or Login from the menu to view full content thanks.</h3>
+        <h3>Please Register or Login from the menu to view full content.</h3>
+        <p>Caution! this site is still in development. Your opinion on what features to include will gladly be accepted.</p><br/>
+        <p>Thank you for visiting this site 😁.</p>
       {% endif %}
     </div>
   </div>

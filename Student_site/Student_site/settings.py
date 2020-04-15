@@ -126,3 +126,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 LOGIN_URL = '/megapp/user_login/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

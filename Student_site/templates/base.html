@@ -1,230 +1,314 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Base</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-    <link rel = stylesheet" href ="css/main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <style> 
-      #sidebarCollapse {
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+   <link rel = stylesheet" href ="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+  <link rel = stylesheet" href ="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+#sidebarCollapse {
     width: 40px;
     height: 40px;
     background: #f5f5f5;
-    }
+}
 
-    #sidebarCollapse span {
-        width: 80%;
-        height: 2px;
-        margin: 0 auto;
-        display: block;
-        background: #555;
-        transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
-    }
-    #sidebarCollapse span:first-of-type {
-        /* rotate first one */
-        transform: rotate(45deg) translate(2px, 2px);
-    }
-    #sidebarCollapse span:nth-of-type(2) {
-        /* second one is not visible */
-        opacity: 0;
-    }
-    #sidebarCollapse span:last-of-type {
-        /* rotate third one */
-        transform: rotate(-45deg) translate(1px, -1px);
-    }
-    #sidebarCollapse.active span {
-        /* no rotation */
-        transform: none;
-        /* all bars are visible */
-        opacity: 1;
-        margin: 5px auto;
-    }
-    .wrapper {
-    display: flex;
-    width: stretch;
-    }
+#sidebarCollapse span {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: #555;
+    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+}
+  #sidebarCollapse span:first-of-type {
+      /* rotate first one */
+      transform: rotate(45deg) translate(2px, 2px);
+  }
+  #sidebarCollapse span:nth-of-type(2) {
+      /* second one is not visible */
+      opacity: 0;
+  }
+  #sidebarCollapse span:last-of-type {
+      /* rotate third one */
+      transform: rotate(-45deg) translate(1px, -1px);
+  }
+  #sidebarCollapse.active span {
+      /* no rotation */
+      transform: none;
+      /* all bars are visible */
+      opacity: 1;
+      margin: 5px auto;
+  }
+  #wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#wrapper.toggled {
+  padding-left: 250px;
+}
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #7386D5;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+/* Sidebar Styles */
 
-    #sidebar {
-        width: 275px;
-        min-height:100%;
-        top: 0;
-        left: 0;
-        bottom:0;
-        height: 100vh;
-        z-index: 999;
-        background: #7386D5;
-        color: #fff;
-        transition: all 0.3s;
-        opacity: 150%;
-    }
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #7386D5;
 
-    #sidebar.active {
-        margin-left: -250px;
-        transform: rotateY(100deg); /* Rotate sidebar vertically by 100 degrees. */
-    }
-    @media (max-width: 768px) {
-        /* Reversing the behavior of the sidebar: 
-          it'll be rotated vertically and off canvas by default, 
-          collapsing in on toggle button click with removal of 
-          the vertical rotation.   */
-        #sidebar {
-            margin-left: -250px;
-            transform: rotateY(100deg);
-        }
-        #sidebar.active {
-            margin-left: 0;
-            transform: none;
-        }
+}
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: rgb(22, 54, 114);
+  font-weight:650;
+}
+.sidebar-nav li p{
+  text-decoration: none;
+  color: rgb(5, 12, 26);
+  font-weight:normal;
+}
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+.sidebar-nav .sidebar-brand {
+  font-size: x-large;
+  line-height: 60px;
+}
+.sidebar-nav .sidebar-brand h3 {
+  color: #31449b;
+  text-align: center;
+  font-weight: normal;
+}
+.sidebar-nav .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: 250px;
+  }
+  #wrapper.toggled {
+    padding-left: 0;
+  }
+  #sidebar-wrapper {
+    width: 250px;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+/* Reversing the behavior of the bars: 
+  Removing the rotation from the first,
+  last bars and reappear the second bar on default state, 
+  and giving them a vertical margin */
+#sidebarCollapse span:first-of-type,
+#sidebarCollapse span:nth-of-type(2),
+#sidebarCollapse span:last-of-type {
+  transform: none;
+  opacity: 1;
+  margin: 5px auto;
+}
 
-        /* Reversing the behavior of the bars: 
-          Removing the rotation from the first,
-          last bars and reappear the second bar on default state, 
-          and giving them a vertical margin */
-        #sidebarCollapse span:first-of-type,
-        #sidebarCollapse span:nth-of-type(2),
-        #sidebarCollapse span:last-of-type {
-            transform: none;
-            opacity: 1;
-            margin: 5px auto;
-        }
-
-        /* Removing the vertical margin and make the first and last bars rotate again when the sidebar is open, hiding the second bar */
-        #sidebarCollapse.active span {
-            margin: 0 auto;
-        }
-        #sidebarCollapse.active span:first-of-type {
-            transform: rotate(45deg) translate(2px, 2px);
-        }
-        #sidebarCollapse.active span:nth-of-type(2) {
-            opacity: 0;
-        }
-        #sidebarCollapse.active span:last-of-type {
-            transform: rotate(-45deg) translate(1px, -1px);
-        }
+/* Removing the vertical margin and make the first and last bars rotate again when the sidebar is open, hiding the second bar */
+#sidebarCollapse.active span {
+  margin: 0 auto;
+}
+#sidebarCollapse.active span:first-of-type {
+  transform: rotate(45deg) translate(2px, 2px);
+}
+#sidebarCollapse.active span:nth-of-type(2) {
+  opacity: 0;
+}
+#sidebarCollapse.active span:last-of-type {
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+}
+  </style>
+<style>
+    @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+    #logo{
+      color: rgb(22, 54, 114); 
+      font-size:xx-large;
+      font-weight: bolder;
     }
-    </style>
-    <style>
-      @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-      #logo{
-        color: rgb(22, 54, 114); 
-        font-size:xx-large;
-        font-weight: bolder;
+    #logo:hover{
+      background-color: unset;
+    }
+      body {
+          font-family: 'Poppins', sans-serif;
+          background: #fafafa;
       }
-      #logo:hover{
-        background-color: unset;
+
+      p {
+          font-family: 'Poppins', sans-serif;
+          font-size: 1.1em;
+          font-weight: 300;
+          line-height: 1.7em;
+          color: #999;
       }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #fafafa;
-        }
 
-        p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.1em;
-            font-weight: 300;
-            line-height: 1.7em;
-            color: #999;
-        }
+      a, a:hover, a:focus {
+          color: inherit;
+          text-decoration: none;
+          transition: all 0.3s;
+      }
+      #contacts li a{
+        font-size: x-small !important;
+        color: black !important;
+      }
+      
+      #contacts li a i{
+        font-size: small;
+        font-style: unset;
+        color: rgb(22, 54, 114);
+        font-weight: 600;
+        overflow: hidden;
+      }
+      ul ul a {
+          font-size: 0.9em !important;
+          padding-left: 30px !important;
+          background: #6d7fcc;
+      }
+  </style>
 
-        a, a:hover, a:focus {
-            color: inherit;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-        #sidebar {
-            /* don't forget to add all the previously mentioned styles here too */
-            background: #7386D5;
-            color: #fff;
-            transition: all 0.3s;
-        }
+</head>
 
-        #sidebar .sidebar-header {
-            padding: 20px;
-            background: #6d7fcc;
-        }
+<body>
 
-        #sidebar ul.components {
-            padding: 20px 0;
-            border-bottom: 1px solid #47748b;
-        }
+  <div id="wrapper" class="toggled">
 
-        #sidebar ul p {
-            color: #fff;
-            padding: 10px;
-        }
-
-        #sidebar ul li a {
-            padding: 10px;
-            font-size: 1.1em;
-            display: block;
-        }
-        #sidebar ul li a:hover {
-            color: #7386D5;
-            background: #fff;
-        }
-
-        #sidebar ul li.active > a, a[aria-expanded="true"] {
-            color: #fff;
-            background: #6d7fcc;
-        }
-        ul ul a {
-            font-size: 0.9em !important;
-            padding-left: 30px !important;
-            background: #6d7fcc;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="wrapper">
-      <!-- Sidebar -->
-      <nav style="background-color: #7386D5;" id="sidebar">
-        <div class="sidebar-header">
-            <h3>Edu App Sidebar</h3>
-        </div>
-
-        <ul class="list-unstyled components">
-            <p class="text-center">Main Navigation</p>
-              <li class="active" style="width: 100%;text-align: center;"><a  href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a></li>
-            <li>
-                <ul  class="collapse list-unstyled" id="homeSubmenu">
-                  <ul style="text-align: left;" class="collapse list-unstyled" aria-labelledby="menu" id="homeSubmenu">
-                    <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'admin:index' %}">Admin</a></li>
-                    <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'register' %}">Register</a></li>
-                    {# Some logic on what to display for last item#}
-                    {% if user.is_authenticated %}
-                      <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'logout' %}">Logout</a></li>
-                    {% else %}
-                      <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'user_login' %}">Login</a></li>
-                    {% endif %} 
-                  </ul>
-                </ul>
-              </li>
-            <li style="width: 100%;text-align: center;">
-                <a href="#">About</a>
-            </li>
-
-            <li style="width: 100%;text-align: center;">
-                <a href="#">Portfolio</a>
-            </li>
-            <li style="width: 100%;text-align: center;">
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-
-      </nav>
-  
-      <!-- Page Content -->
-      <div style="float: right;" id="content" class="container-fluid">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <h3>Edu App Sidebar</h3>
+        </li>
+        <li class="sidebar-brand">
+          <p class="text-center">Main Navigation</p>
+        </li>
+        <li class="active">
+          <a  href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Profile</a>
+            <ul  class="collapse list-unstyled" id="homeSubmenu">
+              <ul style="text-align: left;" class="collapse list-unstyled" aria-labelledby="menu" id="homeSubmenu">
+                <li ><a class="dropdown-item waves-effect waves-light" href="{% url 'admin:index' %}">Admin</a></li>
+                <li ><a class="dropdown-item waves-effect waves-light" href="{% url 'register' %}">Register</a></li>
+                {# Some logic on what to display for last item#}
+                {% if user.is_authenticated %}
+                  <li ><a class="dropdown-item waves-effect waves-light" href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                  <li ><a class="dropdown-item waves-effect waves-light" href="{% url 'user_login' %}">Login</a></li>
+                {% endif %} 
+              </ul>
+            </ul>
+        </li>
+        <li>
+          <a href="#">Overview</a>
+        </li>
+        <li >
+          <a href="#">Course</a>
+        </li>
+        <li ">
+            <a href="{% url 'profile' %}">About</a>
+        </li>
+        <li>
+          <a href="#contacts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" aria-haspopup="true">contacts</a>
+          <ul  class="collapse list-unstyled" id="contacts"></ul>
+            <ul style="text-align: left;" class="collapse" aria-labelledby="menu" id="contacts">
+              <li ><a class="dropdown-item waves-effect waves-light" href="#"><i>Phone:</i>+254 717 297097</a></li>
+              <li ><a class="dropdown-item waves-effect waves-light" href="#"><i>Email:</i>MegaUkrahtech@gmail.com</a></li>  
+            </ul>
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div id="content" class="container-fluid">
         <nav style="background-color: rgb(158, 171, 207);font-size: medium; position:relative;" class="navbar navbar-expand-sm navbar-light">
           <div class="container">
             <ul style="color: rgb(139, 139, 135);" class="nav navbar-nav">
@@ -238,43 +322,48 @@
               <input style="border-radius: 15px;width:230px;background-color:whitesmoke;text-align:center;height:25px;margin-bottom: 0;" class="form-control mr-sm-2 nav-item" name="search" type="text" placeholder="Search" required>
               <button style="height:35px;width:35px;padding:0;background-color:unset;box-shadow:unset;" id="btn"  class="btn  nav-link waves-effect waves-light " type="submit"><i class=" fa fa-search"></i></button>
             </form>
-          
-          <!--<ul class="nav justify-content-end">
+      
+            <!--<ul class="nav justify-content-end">
             <li class="nav-item dropdown" id="dpdown">
               <button type ="button" class="btn  nav-link dropdown-toggle waves-effect waves-light" href="#" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Menu</button>
               <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="menu" role="menu">
-                <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'admin:index' %}">Admin</a></li>
-                <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'register' %}">Register</a></li>
-                {# Some logic on what to display for last item#}
-                {% if user.is_authenticated %}
-                  <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'logout' %}">Logout</a></li>
-                {% else %}
-                  <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'user_login' %}">Login</a></li>
-                {% endif %} 
+              <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'admin:index' %}">Admin</a></li>
+              <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'register' %}">Register</a></li>
+              {# Some logic on what to display for last item#}
+              {% if user.is_authenticated %}
+                <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'logout' %}">Logout</a></li>
+              {% else %}
+                <li style="width: 100%;" ><a class="dropdown-item waves-effect waves-light" href="{% url 'user_login' %}">Login</a></li>
+              {% endif %} 
               </ul>
             </li>
-          </ul>-->
+            </ul>-->
             <button type="button" id="sidebarCollapse" class="navbar-btn">
               <span></span>
               <span></span>
               <span></span>
             </button>
           </div>
-        </nav>
-
-
-        <!--side nav-->
-        
-        <main class="container-fluid">
-        {% block body_block %}
-        {% endblock %}
-        </main>
-
+        </nav> 
+          <main  class="container-fluid">
+            {% block body_block %}
+            {% endblock %}
+            {% if user.is_authenticated %}
+            <div class="fixed-action-btn">
+              <a class="btn-floating btn-large red">
+                <i class="large material-icons">mode_edit</i>
+              </a>
+              <ul>
+                <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+              </ul>
+            </div>
+            {% endif %}
+          </main>
+      
           <footer style="margin-bottom:0;background-color: rgb(111, 137, 207);" class="page-footer jumbotron text-center text-md-left pt-4 mt-auto py-3" >
             <!--/.Footer Links-->
       
             <hr>
-      
             <!--Call to action-->
             <div class="call-to-action text-center my-4">
               <ul class="list-unstyled list-inline">
@@ -282,7 +371,7 @@
                   <h5>Register for free</h5>
                 </li>
                 {% if user.is_authenticated %}
-                <li style="color:black;" ><strong>Already a user</strong></li>
+                <li style="color:black;" ><strong>Already a member</strong></li>
                 {% else %}
                 <li style="border-radius: 10px;" class="list-inline-item"><a class="dropdown-item waves-effect waves-light" href="{% url 'register' %}">Sign up!</a></li>
                 {% endif %}
@@ -294,40 +383,61 @@
             <hr>
       
           <!--Social buttons-->
-          <div class="social-section text-center">
-            <ul class="list-unstyled list-inline">
-              <li class="list-inline-item"><a class="btn-floating btn-fb"><i class="fab fa-facebook-f"> </i></a></li>
-              <li class="list-inline-item"><a class="btn-floating btn-tw"><i class="fab fa-twitter"> </i></a></li>
-              <li class="list-inline-item"><a class="btn-floating btn-gplus"><i class="fab fa-google-plus-g"> </i></a></li>
-              <li class="list-inline-item"><a class="btn-floating btn-li"><i class="fab fa-linkedin-in"> </i></a></li>
-              <li class="list-inline-item"><a class="btn-floating btn-git"><i class="fab fa-github"> </i></a></li>
-            </ul>
-          </div>
+          
           <!--/.Social buttons-->
       
             <!--Copyright-->
             <div class="footer-copyright py-3 text-center">
               <div class="container-fluid">
-                © 2018 Copyright: <a href="{% url 'index' %}"> Eduapp.com </a>
+                © 2020 Copyright: <a href="{% url 'index' %}"> Eduapp.com </a>
       
               </div>
             </div>
             <!--/.Copyright-->
       
           </footer>
+        </div>
       </div>
     </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <script>
+      $(document).ready(function(){
+          $("#wrapper").toggleClass("toggle");
+      });
+  </script>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+  
+<!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <!-- jQuery Custom Scroller CDN -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.fixed-action-btn').floatingActionButton();
+    });
+  </script>
+  <script>
+      $("#sidebarCollapse").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+  </script>
+  <script>
         //slidedown
         $('.dropdown').on('hide.bs.dropdown'),function(e){
           $(this).find('dropdown-menu').first().stop(true,true).slideDown()
@@ -337,47 +447,30 @@
           $(this).find('dropdown-menu').first().stop(true,true).slideUp()
         };
       
-      </script>
+  </script>
 
-      <script type="text/javascript">
+  <script type="text/javascript">
         $(document).ready(function () {
               $('#sidebarCollapse').on('click', function () {
-                  $('#sidebar').toggleClass('active');
+                  $('.sidebar-nav').toggleClass('active');
                   $(this).toggleClass('active');
               });
           });
       </script>
-      <script>
-        $(document).ready(function () {
+  <script  type="text/javascript">
+    $(document).ready(function () {
+      $(".sidebar-nav").mCustomScrollbar({
+          theme: "minimal"
+      });
+      $('#dismiss, .overlay').on('click', function () {
+            // hide sidebar
+            $('.sidebar-nav').removeClass('active');
+      });
+      $('#sidebarCollapse').on('click', function () {
+          $('.sidebar-nav').toggleClass('active');
+      });
+      });
+  </script>
 
-          $("#sidebar").mCustomScrollbar({
-              theme: "minimal"
-          });
-
-          $('#sidebarCollapse').on('click', function () {
-              $('#sidebar').toggleClass('active');
-          });
-
-          });
-      </script>
-      <script>
-        $(document).ready(function () {
-
-          $("#sidebar").mCustomScrollbar({
-              theme: "minimal"
-          });
-
-          $('#sidebarCollapse').on('click', function () {
-              // open or close navbar
-              $('#sidebar').toggleClass('active');
-              // close dropdowns
-              $('.collapse.in').toggleClass('in');
-              // and also adjust aria-expanded attributes we use for the open/closed arrows
-              // in our CSS
-              $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-          });
-
-          });
-      </script>
-  </body>
+</body>
 </html>

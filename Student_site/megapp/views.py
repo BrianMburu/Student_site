@@ -17,6 +17,8 @@ from django.core.exceptions import PermissionDenied
 
 def index(request):
     return render(request,'index.html')
+def profile(request):
+    return render(request,'profile.html')
 @login_required
 def special(request):
     return HttpResponse("You are logged in !")
@@ -31,6 +33,8 @@ def register(request):
         profile_form = UserProfileInfoForm(data=request.POST)
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
+            user.refresh_from_db()
+            user.profile.birth_date = user_form.cleaned_data.get('birth_date')
             user.set_password(user.password)
             user.save()
             profile = profile_form.save(commit=False)
