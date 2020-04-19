@@ -14,11 +14,16 @@ from django.core.exceptions import PermissionDenied
 
 
 # Create your views here.
-
 def index(request):
     return render(request,'index.html')
 def profile(request):
     return render(request,'profile.html')
+@login_required
+def notes(request):
+    return render(request, 'notes.html')
+@login_required
+def chat(request):
+    return render(request,'chat.html')
 @login_required
 def special(request):
     return HttpResponse("You are logged in !")

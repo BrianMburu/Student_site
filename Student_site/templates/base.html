@@ -88,7 +88,6 @@
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  
 }
 #wrapper.toggled #sidebar-wrapper {
   width: 250px;
@@ -288,9 +287,16 @@
           <a href="#">Overview</a>
         </li>
         <li >
-          <a href="#">Course</a>
+          <a  href="#courses" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Courses</a>
+          <ul  class="collapse list-unstyled" id="courses">
+            <ul style="text-align: left;" class="collapse list-unstyled" aria-labelledby="menu" id="courses">
+              <li ><a class="dropdown-item waves-effect waves-light" href="{% url 'notes' %}">Computer science</a></li>
+              <li ><a class="dropdown-item waves-effect waves-light" href="{% url 'notes' %}">quantity survey</a></li>
+              <li ><a class="dropdown-item waves-effect waves-light" href="{% url 'notes' %}">Commerce</a></li>
+            </ul>
+          </ul>
         </li>
-        <li ">
+        <li >
             <a href="{% url 'profile' %}">About</a>
         </li>
         <li>
@@ -355,7 +361,7 @@
                 <i class="large material-icons">mode_edit</i>
               </a>
               <ul>
-                <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                <li><a href="{% url 'chat' %}" class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
               </ul>
             </div>
             {% endif %}
@@ -457,7 +463,7 @@
                   $(this).toggleClass('active');
               });
           });
-  </script>
+      </script>
   <script  type="text/javascript">
     $(document).ready(function () {
       $(".sidebar-nav").mCustomScrollbar({

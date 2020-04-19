@@ -2,9 +2,9 @@
 {% block body_block %}
   <div class="container-fluid">
     <div  class="jumbotron">
-      <h1>Hi there Welcome EDU APP!!</h1>
+      <h1>Hi there Welcome To EDU APP!!</h1>
       {% if user.is_authenticated%}
-        <h2>Hi {{ user.username }}. Continue to advance your career with EDU APP.</h2>
+        <h2>Hi {{ user.username }}. Continue to advance your career {{ course }} with EDU APP.</h2>
         <p>You can send your opinions on the email in the contacts section in the side menu bar. They will gladly be accepted and looked into.</p>
       {% else %}
         <h2>You are not logged in!</h2>

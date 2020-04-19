@@ -11,6 +11,7 @@ urlpatterns =[
     path('new_search/',views.new_search,name='new_search'),
     path('special/',views.special,name='special'),
     path('logout/', views.user_logout, name='logout'),
-    path('profile',views.profile , name='profile')
-    
+    path('profile',views.profile , name='profile'),
+    path('notes/', views.notes, name = 'notes'),
+    path('chat/', views.chat, name = 'chat'),
 ]
